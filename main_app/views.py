@@ -18,3 +18,7 @@ def projects(request):
 
 def about(request):
     return render(request, "about.html")
+
+def project_detail(request, project_id):
+  project = Project.objects.get(id=project_id)
+  return render(request, 'projects/detail.html', { "project": project })
